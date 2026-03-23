@@ -19,7 +19,12 @@
 *.fdb_latexmk
 *.fls
 *.gz
+*.pdf
+*.bbl
+
 .DS_Store
 
 viewer.js
 object_hash.js
+
+_*

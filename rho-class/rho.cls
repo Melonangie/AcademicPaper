@@ -558,10 +558,13 @@
 
 \RequirePackage{csquotes}
 \RequirePackage[
-	backend=biber,
-	style=ieee,
-	sorting=ynt,
-	citestyle=numeric-comp
+    backend=biber,
+    style=numeric,
+    sortcites,
+    sorting=nty,
+    backref,
+    natbib,
+    hyperref
 ]{biblatex}
 
 \addbibresource{rho.bib}
