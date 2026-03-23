@@ -31,6 +31,10 @@
 %% Spanish babel recomendation
 % \usepackage[spanish,es-nodecimaldot,es-noindentfirst]{babel}
 
+% Using \doublespacing in the preamble 
+% changes the text to double-line spacing
+\onehalfspacing
+
 %----------------------------------------------------------
 % Title
 %----------------------------------------------------------
@@ -72,7 +76,7 @@
 \journal{Springer Nature 2026}
 \theday{\today}
 \vol{59}
-\no{4}
+\issue{4}
 
 %----------------------------------------------------------
 % Abstract and Keywords
@@ -97,61 +101,117 @@
 
 \section{Introduction}
 
-    \rhostart{I}n the current technological epoch,Artificial Intelligence (AI) has transcended its role as a mere automation tool to become a "collaborative agent." In the audiovisual and video game industries, generative models do not merely replace the artist but establish an interactive dialogue that optimizes creative phases previously burdened by technical repetition \cite{davis2023signalflow}. 
+    \rhostart{I}n the current technological epoch,Artificial Intelligence (AI) has transcended its role as a mere automation tool to become a "collaborative agent". In the audiovisual and video game industries, generative models do not merely replace the artist but establish an interactive dialogue that optimizes creative phases previously burdened by technical repetition \cite{calderon}. 
 
-    However, this democratization of high-fidelity content generation has blurred the lines between reality and simulation, sparking a profound crisis of authenticity and legal ownership. This survey explores the technical breakthroughs in diffusion models and the socio-ethical friction they generate within the artistic community.
+    However, this democratization of high-fidelity content generation has blurred the lines between reality and simulation, sparking a profound crisis of authenticity and legal ownership. This review explores the technical breakthroughs in diffusion models and the  \inlinecode{socio-ethical} friction they generate within the artistic community.
 
-    This class includes the following files in the rho-class folder:
-	
-	\begin{itemize}
-		\item \inlinecode{rho.cls} — The main class file.
-		\item \inlinecode{rhoenvs.sty} — A package containing custom environments.
-		\item \inlinecode{rhobabel.sty} — A support package for multilingual.
-		\item \inlinecode{README.md} — With essential information.
-	\end{itemize}
+     \begin{note}
+            \textbf{Socio‑ethical} refers to the combined social consequences and ethical obligations of a technology. 
+            \begin{equation}\label{eq:equation}
+                    Socio‑ethical = social impact × ethical duty
+            \end{equation}
+    \end{note}
 
-    Additionally, this template includes a sample document \inlinecode{main.tex}, a bibliography file \inlinecode{rho.bib}, as well as figures, tables and code examples to help you get started quickly.
+\section{Literature Review}
 
-    \subsection{License}
+    \subsection{Technical Acceleration and the "Collaborative Agent" Paradigm}
 
-        This template was developed by Guillermo Jimenez, licensed under Creative Commons CC BY 4.0. You are free to adapt, share, and distribute it, provided that proper credit is given to the original author.
+        The adoption of AI into the artistic workflow has shifted the focus from manual execution to conceptual direction. Recent work on diffusion‑based visual art creations has identified a cluster of research around generation with emphasis on guided outputs (controllability), pipeline‑ready assets (application‑oriented), and historical or genre-specific art creation, that are particularly relevant for film and video games pipelines \cite{wang}.
 
-\section{Document Styling}
+        In this context, AI serves as a tool that suggests and transforms, allowing artists to address complex tasks such as lighting adjustments or composition cleaning in minutes \cite{calderon}. This efficiency extends to the generation of 3D assets. Wang and Fu demonstrate that integrating Large Language Models (LLMs) with Gaussian Splatting (GS) enables the creation of \inlinecode{high-fidelity} 3D objects that exhibit \inlinecode{physics-grounded} motion \cite{wenqing}. 
 
-    \subsection{Document Type}
+        These advancements are crucial for the video game industry, where the ability to generate \inlinecode{physics-aware} objects from text prompts dramatically reduces the gap between conceptualization and real-time implementation. 
 
-        Before the main title, a brief descriptor indicates the type of document (e.g., Lab Report, Research Article, etc). This is controlled by the \inlinecode{\doctype{}} command. 
-        
-        If no such label is needed, omit the command and the title will automatically reposition itself to maintain proper vertical spacing and visual alignment.
+        Furthermore, this technological leap is democratizing the video game industry. By reducing reliance on large art departments, independent teams can now achieve a level of visual and technical polish once reserved only for AAA studios with multi-million dollar budgets \cite{condorelli}.
 
-    \subsection{Abstract and Keywords}
+        This shift has enabled small independent teams to compete in terms of \inlinecode{high-fidelity} production, refocusing the competitive advantage from sheer labor capacity to narrative and mechanical innovation. Conversely, for AAA studios this acceleration facilitates a transition toward \inlinecode{procedural oversight}, where the challenge lies not in asset volume but in maintaining a unique artistic signature within an increasingly automated production ecosystem. 
 
-        The abstract and keywords are declared in the preamble of the document with \inlinecode{\begin{abstract}...\end{abstract}} environment alongside the dedicated \inlinecode{\keywords{}} command to allow the class file to automatically handle their formatting and positioning during the title creation process.
+    \subsection{The Crisis of Attribution and Originality}
 
-    \subsection{Lettrine}
+        Despite these technical gains, the  \inlinecode{AI-ification} of art  has sparked backlash and rejection amid the perception of AI as "institutionalized plagiarism". Panera et al. argue that since models are trained on a vast corpora of human work without explicit consent leads the artistic community to regard the outputs as devaluing human labor \cite{panera}.
 
-		The \inlinecode{\rhostart{}} command, provides a personalized lettrine for the beginning of the first paragraph as shown in this example.
+        \begin{note}
+            By \textbf{AI‑ification of art} we refer to the systematic integration of AI models throughout the creative pipeline. 
+            Work traditionally performed manually by an artist is increasingly executed by algorithms while the artist provide conceptual direction, constraints, and final judgment.
+        \end{note}
 
-	\subsection{Table of Contents}
+        This critique should be more precisely framed as a claim of labour theft rather than plagiarism alone. As Goetze et al. argue, the central ethical issue is not merely misattribution but the appropriation of the products of creative labour without consent nor compensation \cite{goetze}.
 
-        This class includes a customized design for the table of contents, which is disabled by default. To enable it, insert the \inlinecode{\tableofcontents} command before your first section.
+        Critically, although defenders argue that AI mimics the human neural processes of learning from influence, the scale and speed of appropriation introduce a qualitative difference. The core question of the debate is whether a \inlinecode{prompt} constitutes sufficient creative intent to grant authorship, or whether the lack of human emotional experience in the generative process inherently devalues the art \cite{panera}.
 
-\section{Cross-Reference Commands*}
+        To counter this "black box" opacity, Sankaran et al. introduce the Compositional Provenance Framework (CPF), a  \inlinecode{socio-technical architecture} designed to restore forensic transparency across the generative pipeline. They argue that the current attribution crisis arises when models replicate stylistic signatures without a traceable record of the creative lineage. By implementing gradient-based influence tracking and immutable provenance store, CPF quantifies the training-data contributions at the token or pixel level \cite{sankaran}.
 
-    Rho-class provides shorthand commands for cross-referencing figures, tables, code listings, and equations. To customize the label format, edit the \inlinecode{rhobabel.sty} file. Label translations for Spanish are handled automatically.
+        \begin{note}
+            A \textbf{socio‑technical architecture} is a system with human controls (roles, policies, audit and dispute workflows) and policies (content credentials, watermarking, perceptual hashing, immutable ledgers) use for tracking tech, yielding verifiable and enforceable transparency across the generative pipeline.
+        \end{note}
+
+        This technical shift is fundamental for the industry as it moves the conversation from an irreconcilable ethical deadlock toward a measurable system, where creative borrowing becomes visible and contestable,potentially paving the way for automated royalty systems and the protection of artists moral rights in the age of synthetic media.
+
+    \subsection{Socio-Technical Biases and Regional Stereotypes}
+
+		A significant shortcoming in the current generative models is the persistence of \inlinecode{regional stereotypes}. Jha et al. introduce the ViSAGe framework, revealing that text‑to‑image models often default to stereotypical markers, particularly  in the depictions of Global South identity groups \cite{jha}.
+
+        This phenomenon persists even when prompts are explicitly neutral. For the video game industry, which strives for global representation, this inherent bias in deep-learning architectures poses a risk of reinforcing harmful tropes through automated content generation, thus necessitating a more rigorous approach to dataset curation and algorithmic fairness. 
+
+        This phenomenon persists even under explicitly neutral prompts. For the video game industry, which strives for global representation, this inherent bias in deep‑learning architectures risks reinforcing harmful tropes through automated content generation, thus necessitating a more rigorous approach to dataset curation and algorithmic fairness.
+
+        This concern also supports a more critical approach to AI-assisted creation, one that explicitly considers dataset constraints, sustainability, and authorship, rather than treating biased outputs as merely isolated technical failures \cite{condorelli}.
+
+	\subsection{Forensic Transparency and the Fight Against Manipulation}
+
+        The rise of the hyperrealistic generation has made the distinction between reality and simulation "increasingly blurred" \cite{peregrina}.
+
+        Peregrina highlights that the majority of users cannot reliably differentiate between AI-generated and human-created imagery, leading to a vulnerability in social communication and national security. To counter the threat of deepfakes and uncompensated appropriation, new frameworks for "ethical attribution" are emerging. Sankaran proposes the Compositional Provenance Framework (CPF), which uses retrieval-augmented influence tracking and cryptographic governance to log attribution metadata directly into the generative pipeline \cite{sankaran}.
+
+        This technical solution aims to make creative borrowing "visible and contestable," providing a path forward for the ethical exploitation of generative models.
+
+\section{Future Directions}
+
+    Current research is moving toward "Edge AI" and "Opt-in Training Models." Future directions should prioritize:
 
         \begin{itemize}
-            \item \inlinecode{\figref{}} — Uses the label style defined by \inlinecode{\figlabel}.
-            \item \inlinecode{\figsref{}} — Uses the label style defined by \inlinecode{\figslabel}.
-            \item \inlinecode{\tabref{}} — Uses the label style defined by \inlinecode{\tablabel}.
-            \item \inlinecode{\coderef{}}  — Uses the label style defined by \inlinecode{\captionlabelcode}.
-            \item \inlinecode{\equref{}} — Uses the label style defined by \inlinecode{\eqlabel}.
+            \item \inlinecode{Real-time Physical Consistency} — Refining the integration of continuum mechanics in generative video to avoid visual artifacts in complex game environments. \inlinecode{\figlabel}.
+            \item \inlinecode{Decentralized Attribution} — Leveraging blockchain and the CPF framework to ensure artists are compensated when their style is utilized by commercial models. \inlinecode{\figslabel}.
+            \item \inlinecode{Cross-Modal Fairness} — Developing algorithms that actively de-bias stereotypes during the inference phase, ensuring diverse and respectful representation in audiovisual content. \inlinecode{\tablabel}.
         \end{itemize}
         
+    	
+        \tabref{tab:table} shows an example table of some astronomical objects. 
+
+        \begin{table}[H]
+        	\caption{Astronomical Object Data}
+        	\label{tab:table}
+        	\begin{tabular}{
+        		>{\raggedright\arraybackslash}p{0.29\columnwidth}
+        		>{\raggedright\arraybackslash}p{0.56\columnwidth}
+        	}
+        	\toprule
+        	\textbf{Object} & \textbf{Type} v
+        	\midrule
+        	Real-time Physical Consistency & Star system \\
+        	Betelgeuse & Red supergiant star \\
+        	Andromeda & Spiral galaxy \\
+        	Earth & Planet \\
+        	Sirius & Binary star system \\
+        	\bottomrule
+        	\end{tabular}
+        	\tabletext{Note: The table contains data of some famous celestial objects.}
+        \end{table}
+
     These commands generate fully hyperlinked references, both the label and the number, ensuring navigation to the referenced element when clicked in the PDF.
 
-\section{Figures}
-		
+\section{Conclusion}
+
+        The survey of recent literature reveals a dual-core reality: while Deep Learning offers unprecedented acceleration for audiovisual production and 3D modeling, it operates within an ethical vacuum regarding copyright and social bias. The transition from "Black Box" models to transparent, "provenance-aware" systems is not just a technical requirement but a moral imperative. As the boundaries of reality continue to shift, the industry must adopt a "Human-in-the-Loop" philosophy where AI serves the artist's vision without eroding the foundational rights of human creators.
+
+%----------------------------------------------------------
+
+\printbibliography
+
+%----------------------------------------------------------
+
+\section{Tables}
+
     \figref{fig:figure} shows a 3D surface visualization of a bivariate function.
     		
     \begin{figure}[H]
@@ -421,11 +481,5 @@
             \vskip9pt
             Enjoy writing with rho-class!
         \end{center}
-
-%----------------------------------------------------------
-
-\printbibliography
-
-%----------------------------------------------------------
 
 \end{document}

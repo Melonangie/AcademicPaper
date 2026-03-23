@@ -76,12 +76,20 @@
 % \RequirePackage{matlab-prettifier}
 % \RequirePackage{longtable}
 % \RequirePackage{supertabular}
-% \RequirePackage{setspace}
+\RequirePackage{setspace}
 % \RequirePackage{lipsum}
 % \RequirePackage{pbalance} 
 % \RequirePackage{afterpage}
 % \RequirePackage{sidecap}
 % \RequirePackage[switch]{lineno}
+
+%----------------------------------------------------------
+% Paragraphs
+%----------------------------------------------------------
+\RequirePackage[
+    skip=10pt plus1pt, 
+    indent=20pt
+]{parskip}
 
 %----------------------------------------------------------
 % Fonts
@@ -109,7 +117,7 @@
 \RequirePackage[most,many]{tcolorbox}
 \RequirePackage{colortbl}
 \RequirePackage{booktabs}
-\AtBeginEnvironment{tabular}{\small\sffamily}
+\AtBeginEnvironment{tabular}{\medium\sffamily}
 \newcommand{\tabletext}[1]{{\fontsize{7}{9}\vskip2pt\sffamily\itshape\selectfont#1}}
 
 %----------------------------------------------------------
@@ -192,7 +200,7 @@
 \newcommand{\journal}[1]{\def\@journal{#1}}
 \newcommand{\theday}[1]{\def\@theday{#1}}
 \newcommand{\vol}[1]{\def\@vol{#1}}
-\newcommand{\no}[1]{\def\@no{#1}}
+\newcommand{\issue}[1]{\def\@no{#1}}
 
 % First page style
 \fancypagestyle{firststyle}{
@@ -241,10 +249,10 @@
 
 % Abstract text style new commands
 \newcommand{\keywords}[1]{\def\@keywords{#1}}
-\newcommand{\absfont}{\color{black}\normalfont\sffamily\linespread{1}\fontsize{8.5}{11}\selectfont}
-\newcommand{\absheadfont}{\color{rhocolor}\normalfont\sffamily\fontsize{9}{11}\selectfont}
-\newcommand{\keywordsfont}{\normalfont\sffamily\itshape\linespread{1}\fontsize{7.8}{9}\selectfont}
-\newcommand{\keywordheadfont}{\normalfont\sffamily\fontsize{7.8}{9}\selectfont\bfseries}
+\newcommand{\absfont}{\color{black}\normalfont\sffamily\linespread{1}\fontsize{8.5}{14}\selectfont}
+\newcommand{\absheadfont}{\color{rhocolor}\normalfont\sffamily\fontsize{9}{12}\selectfont}
+\newcommand{\keywordsfont}{\normalfont\sffamily\itshape\linespread{1}\fontsize{7.8}{14}\selectfont}
+\newcommand{\keywordheadfont}{\normalfont\sffamily\fontsize{7.8}{12}\selectfont\bfseries}
 
 % Abstract definition
 \def\xabstract{abstract}
@@ -261,12 +269,12 @@
 
 % Rho class abstract style 
 \newcommand{\rhoabstract}{%
-    \begin{tcolorbox}[colback=rhocolor!13, arc=3pt, boxrule=0pt, left=6pt, right=6pt, top=6pt, bottom=6pt, before skip=0pt, after skip=0pt]
+    \begin{tcolorbox}[colback=rhocolor!13, arc=3pt, boxrule=0pt, left=10pt, right=10pt, top=10pt, bottom=10pt, before skip=0pt, after skip=0pt]
         \ifx\@keywords\undefined
             \absheadfont\bfseries\abstractname\vskip0.5em\absfont\theabstract\vskip10pt
         \else
             \absheadfont\bfseries\abstractname\vskip0.5em\absfont\theabstract\vskip10pt
-            \keywordsfont\keywordname\hspace{0.1em}\keywordsfont\@keywords
+            \keywordsfont\keywordname\hspace{0.3em}\keywordsfont\@keywords
         \fi
     \end{tcolorbox}
 }
@@ -395,14 +403,14 @@
     []
   
 \titleformat{\subsubsection}[block] % You may change it to "runin"
-    {\small\sffamily\bfseries\itshape}
+    {\medium\sffamily\bfseries\itshape}
     {\thesubsubsection.}
     {0.5em}
     {#1} % If using runin, change #1 to '#1. ' (space at the end)
     []    
   
 \titleformat{\paragraph}[runin]
-    {\small\bfseries}
+    {\medium\bfseries}
     {}
     {0em}
     {#1} 
@@ -431,7 +439,7 @@
     []
 
 \titlecontents{subsection}[3pc]
-    {\addvspace{4pt}\small\sffamily\selectfont}
+    {\addvspace{4pt}\medium\sffamily\selectfont}
     {\contentslabel[\thecontentslabel]{\tocsep}}
     {}
     {\ \titlerule*[.5pc]{.}\ \thecontentspage}
@@ -452,13 +460,13 @@
 \RequirePackage{subcaption}
 
 % Figure
-\captionsetup[figure]{format=plain, labelsep=period, textfont={small}, justification=centering, labelfont={small,bf,sf}}
+\captionsetup[figure]{format=plain, labelsep=period, textfont={medium}, justification=centering, labelfont={medium,bf,sf}}
 
 % Table
-\captionsetup*[table]{labelfont={small,bf,sf},textfont={small},position=below,aboveskip=0pt,labelsep=period}
+\captionsetup*[table]{labelfont={medium,bf,sf},textfont={medium},position=below,aboveskip=0pt,labelsep=period}
 
 % Listings and minted
-\captionsetup[lstlisting]{font=small, labelfont={bf,sf}, aboveskip=0pt, belowskip=9pt, position=below, textfont=small, labelsep=period}
+\captionsetup[lstlisting]{font=medium, labelfont={bf,sf}, aboveskip=0pt, belowskip=9pt, position=below, textfont=medium, labelsep=period}
 \renewcommand\lstlistingname{\captionlabelcode}
 \renewcommand\lstlistlistingname{\captionlabelcode}
 
@@ -492,7 +500,7 @@
 	keywordstyle=\color{rhocodekey},
 	numberstyle=\tiny\color{rhogray},
 	stringstyle=\color{rhocodestring},
-	basicstyle=\small\ttfamily, % \linespread{1.15}
+	basicstyle=\medium\ttfamily, % \linespread{1.15}
 	breakatwhitespace=false,        
 	breaklines=true,                 
 	captionpos=b,                    
@@ -510,7 +518,7 @@
 	columns=fullflexible,
 	rulecolor=\color{rhogray},
 	frame=single,
-	postbreak=\mbox{\small\textcolor{rhogray}{$\hookrightarrow$}\space}
+	postbreak=\mbox{\medium\textcolor{rhogray}{$\hookrightarrow$}\space}
 }
 
 \lstset{style=rhocoding}
@@ -527,7 +535,7 @@
 	frame=single,
 	breaklines,
 	numbersep=5pt,
-	fontsize=\small,
+	fontsize=\medium,
 	bgcolor=codeback,
 }
 
@@ -545,7 +553,7 @@
 	left=1pt, right=1pt,    
 	top=1pt, bottom=1pt,      
 	boxsep=0pt,             
-	fontupper=\ttfamily\small,
+	fontupper=\ttfamily\medium,
 	valign=center,
     nobeforeafter,
     box align=base
