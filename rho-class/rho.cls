@@ -117,7 +117,7 @@
 \RequirePackage[most,many]{tcolorbox}
 \RequirePackage{colortbl}
 \RequirePackage{booktabs}
-\AtBeginEnvironment{tabular}{\medium\sffamily}
+\AtBeginEnvironment{tabular}{\small\sffamily}
 \newcommand{\tabletext}[1]{{\fontsize{7}{9}\vskip2pt\sffamily\itshape\selectfont#1}}
 
 %----------------------------------------------------------
@@ -403,14 +403,14 @@
     []
   
 \titleformat{\subsubsection}[block] % You may change it to "runin"
-    {\medium\sffamily\bfseries\itshape}
+    {\small\sffamily\bfseries\itshape}
     {\thesubsubsection.}
     {0.5em}
     {#1} % If using runin, change #1 to '#1. ' (space at the end)
     []    
   
 \titleformat{\paragraph}[runin]
-    {\medium\bfseries}
+    {\small\bfseries}
     {}
     {0em}
     {#1} 
@@ -439,7 +439,7 @@
     []
 
 \titlecontents{subsection}[3pc]
-    {\addvspace{4pt}\medium\sffamily\selectfont}
+    {\addvspace{4pt}\small\sffamily\selectfont}
     {\contentslabel[\thecontentslabel]{\tocsep}}
     {}
     {\ \titlerule*[.5pc]{.}\ \thecontentspage}
@@ -460,13 +460,13 @@
 \RequirePackage{subcaption}
 
 % Figure
-\captionsetup[figure]{format=plain, labelsep=period, textfont={medium}, justification=centering, labelfont={medium,bf,sf}}
+\captionsetup[figure]{format=plain, labelsep=period, textfont={small}, justification=centering, labelfont={small,bf,sf}}
 
 % Table
-\captionsetup*[table]{labelfont={medium,bf,sf},textfont={medium},position=below,aboveskip=0pt,labelsep=period}
+\captionsetup*[table]{labelfont={small,bf,sf},textfont={small},position=below,aboveskip=0pt,labelsep=period}
 
 % Listings and minted
-\captionsetup[lstlisting]{font=medium, labelfont={bf,sf}, aboveskip=0pt, belowskip=9pt, position=below, textfont=medium, labelsep=period}
+\captionsetup[lstlisting]{font=small, labelfont={bf,sf}, aboveskip=0pt, belowskip=9pt, position=below, textfont=small, labelsep=period}
 \renewcommand\lstlistingname{\captionlabelcode}
 \renewcommand\lstlistlistingname{\captionlabelcode}
 
@@ -500,7 +500,7 @@
 	keywordstyle=\color{rhocodekey},
 	numberstyle=\tiny\color{rhogray},
 	stringstyle=\color{rhocodestring},
-	basicstyle=\medium\ttfamily, % \linespread{1.15}
+	basicstyle=\small\ttfamily, % \linespread{1.15}
 	breakatwhitespace=false,        
 	breaklines=true,                 
 	captionpos=b,                    
@@ -518,7 +518,7 @@
 	columns=fullflexible,
 	rulecolor=\color{rhogray},
 	frame=single,
-	postbreak=\mbox{\medium\textcolor{rhogray}{$\hookrightarrow$}\space}
+	postbreak=\mbox{\small\textcolor{rhogray}{$\hookrightarrow$}\space}
 }
 
 \lstset{style=rhocoding}
@@ -535,7 +535,7 @@
 	frame=single,
 	breaklines,
 	numbersep=5pt,
-	fontsize=\medium,
+	fontsize=\small,
 	bgcolor=codeback,
 }
 
@@ -553,7 +553,7 @@
 	left=1pt, right=1pt,    
 	top=1pt, bottom=1pt,      
 	boxsep=0pt,             
-	fontupper=\ttfamily\medium,
+	fontupper=\ttfamily\small,
 	valign=center,
     nobeforeafter,
     box align=base
